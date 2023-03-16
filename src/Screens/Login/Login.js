@@ -1,36 +1,82 @@
-import { View, Text,Image,TouchableOpacity } from 'react-native'
-import React from 'react'
-import {style} from './Loginstyle'
+import { View, Text, Image, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { style } from "./Loginstyle";
 import Imagepath from "../../Constants/Imagepath";
-import Signcustom from '../../Components/Signcustom.js';
-import Custbtn from '../../Components/Custbtn.js';
-export const Login = ({navigation}) => {
+import Signcustom from "../../Components/Signcustom.js";
+import Custbtn from "../../Components/Custbtn.js";
+import Strings from "../../Constants/Strings";
+export const Login = ({ navigation }) => {
+  const [mobile, SetMobile] = useState("");
+  const [password, SetPassword] = useState("");
+  const [enterpass, SetEnterPass] = useState(true);
+  const [Hide, SetHide] = useState("Show");
+  function gotolocation() {
+    if (!mobile.trim()) {
+      alert("enter mobile number");
+    } else if (!password.trim()) {
+      alert("enter password");
+    } else {
+      navigation.navigate("Location");
+    }
+  }
+  function Hidepassword() {
+    if (enterpass == false) {
+      SetEnterPass(true);
+      SetHide("hide");
+      return;
+    }
+    if (enterpass == true) {
+      SetEnterPass(false);
+      SetHide("Show");
+      return;
+    }
+  }
   return (
     <View style={style.container}>
-     <TouchableOpacity onPress={()=>{navigation.goBack()}}><Image  style={style.arrow} source={Imagepath.icBack}></Image></TouchableOpacity>
-    <View style={style.createnew}>
-      <Text style={style.account}>Welcome back!</Text>
-      <Text style={style.continue}>We are happy to see. You can login to continue.</Text>
-      </View>
-        <View  style={style.token}>
-        <View style={style.tokenpicker}>
-          <Signcustom placeholder='+1'/>
+      <View style={style.logintop}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.goBack();
+          }}
+        >
+          <Image style={style.arrow} source={Imagepath.icBack}></Image>
+        </TouchableOpacity>
+        <View style={style.createnew}>
+          <Text style={style.account}>{Strings.Welcome}</Text>
+          <Text style={style.continue}>{Strings.We_are_Happy}</Text>
+        </View>
+        <View style={style.token}>
+          <View style={style.tokenpicker}>
+            <Signcustom placeholder="+1" />
           </View>
-        <View style={style.mobile}>
-          <Signcustom placeholder='Mobile number'/>
+          <View style={style.mobile}>
+            <Signcustom
+              placeholder={Strings.Mobile_No}
+              value={mobile}
+              onChangeText={(val) => SetMobile(val)}
+              maxLength={10}
+              keyboard="numeric"
+            />
           </View>
-      </View>
-      <View>
-        <Signcustom placeholder='Password' SHOW='Show'/> 
+        </View>
+        <View>
+          <Signcustom
+            onPress={Hidepassword}
+            placeholder={Strings.Password}
+            SHOW={Hide}
+            hide={enterpass}
+            onChangeText={(val) => SetPassword(val)}
+            maxLength={8}
+          />
         </View>
         <TouchableOpacity style={style.forgetotp}>
-       <Text style={style.useotp}>Use OTP</Text> 
-       <Text style={style.forward}>Forget Password?</Text>
-       </TouchableOpacity>
-      <Custbtn title='LOGIN'/>
+          <Text style={style.useotp}>{Strings.UseOTP}</Text>
+          <Text style={style.forward}>{Strings.Forgot_password}</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={style.loginbottom}>
+        <Custbtn onPress={gotolocation} title={Strings.LOGIN} />
+      </View>
     </View>
-  )
-}
-
-
-
+  );
+};

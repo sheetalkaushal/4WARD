@@ -10,22 +10,26 @@ export const style = StyleSheet.create({
     flex: 1,
     paddingHorizontal: moderateScale(24),
   },
-  account: {
-    height: moderateVerticalScale(40),
-    fontSize: moderateScale(24),
-    color: ColorStyle.WHITE,
-    fontWeight: "600",
-    marginTop: moderateScale(16),
-  },
-  arrow: {
+  addinfo: {
+    flexDirection: "row",
     marginTop: moderateScale(56),
+    gap: moderateScale(16),
+    alignItems: "center",
   },
-  continue: {
-    height: moderateVerticalScale(40),
-    fontSize: moderateScale(15),
-    color: ColorStyle.INPUT_TEXT,
-    letterSpacing: 0,
+  info: {
+    color: ColorStyle.WHITE,
+    fontSize: moderateScale(16),
     fontWeight: "600",
+  },
+  change: {
+    alignSelf: "center",
+    height: moderateVerticalScale(100),
+    width: moderateVerticalScale(100),
+  },
+  changeProfile: {
+    marginTop: moderateScale(42),
+    marginBottom: moderateScale(52),
+    borderRadius: 85.71,
   },
   firstn: {
     flexDirection: "row",
@@ -44,10 +48,14 @@ export const style = StyleSheet.create({
   mobile: {
     flex: 0.7,
   },
-  signtop: {
+  top: {
     flex: 0.9,
   },
-  signbotttom: {
+
+  EditProfiletop: {
+    flex: 0.9,
+  },
+  EditProfilebotttom: {
     flex: 0.1,
   },
 });

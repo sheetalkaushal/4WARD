@@ -6,25 +6,20 @@ import {
 import ColorStyle from "../StyleColor/ColorStyle";
 export const style = StyleSheet.create({
   container: {
-    backgroundColor: ColorStyle.DARK_GREY,
+    backgroundColor:ColorStyle.DARK_GREY,
     flex: 1,
     paddingHorizontal: moderateScale(24),
   },
-  arrow: {
+  addinfo: {
+    flexDirection: "row",
     marginTop: moderateScale(56),
+    gap: moderateScale(16),
+    alignItems: "center",
+    marginBottom: moderateScale(42),
   },
-  account: {
-    height: moderateVerticalScale(40),
-    fontSize: moderateScale(24),
-    color: ColorStyle.WHITE,
-    letterSpacing: 0,
-    fontWeight: "600",
-    marginTop: moderateScale(16),
-  },
-  continue: {
-    height: moderateVerticalScale(40),
-    fontSize: moderateScale(15),
-    color: ColorStyle.INPUT_TEXT,
+  info: {
+    color:ColorStyle.WHITE,
+    fontSize: moderateScale(16),
     fontWeight: "600",
   },
   setpasstop: {

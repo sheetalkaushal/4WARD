@@ -1,11 +1,12 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { style } from "./Signupstyle";
+import { style } from "./EditProfileStyle";
 import Imagepath from "../../Constants/Imagepath";
 import Signcustom from "../../Components/Signcustom.js";
 import Custbtn from "../../Components/Custbtn.js";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Strings from "../../Constants/Strings";
-export const Signup = ({ navigation }) => {
+export const EditProfile = ({ navigation }) => {
   const [first, Setfirst] = useState("");
   const [Last, SetLast] = useState("");
   const [Email, SetEmail] = useState("");
@@ -21,25 +22,24 @@ export const Signup = ({ navigation }) => {
     } else if (!Mobile.trim()) {
       alert("Enter your Mobile number");
     } else {
-      navigation.navigate("OTPPass", { Mobile });
+      navigation.navigate("OTPPass");
     }
   }
   return (
     <View style={style.container}>
-      <View style={style.signtop}>
+      <KeyboardAwareScrollView style={style.EditProfiletop}>
         <TouchableOpacity
+          style={style.addinfo}
           onPress={() => {
             navigation.goBack();
           }}
         >
           <Image style={style.arrow} source={Imagepath.icBack}></Image>
+          <Text style={style.info}>{Strings.Edit_Profile}</Text>
         </TouchableOpacity>
-        <View style={style.createnew}>
-          <Text style={style.account}>{Strings.Create_a_new_account}</Text>
-          <Text style={style.continue}>
-            {Strings.Create_an_account_so_you_can_continue}
-          </Text>
-        </View>
+        <TouchableOpacity style={style.changeProfile}>
+          <Image style={style.change} source={Imagepath.icprofile}></Image>
+        </TouchableOpacity>
         <View style={style.firstn}>
           <View style={style.fname}>
             <Signcustom
@@ -79,9 +79,9 @@ export const Signup = ({ navigation }) => {
             />
           </View>
         </View>
-      </View>
-      <View style={style.signbotttom}>
-        <Custbtn onPress={gotosetpass} title={Strings.NEXT} />
+      </KeyboardAwareScrollView>
+      <View style={style.EditProfilebotttom}>
+        <Custbtn onPress={gotosetpass} title={Strings.SAVE_CHANGES} />
       </View>
     </View>
   );
