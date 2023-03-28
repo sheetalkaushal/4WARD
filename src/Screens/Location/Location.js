@@ -5,30 +5,31 @@ import Imagepath from "../../Constants/Imagepath";
 import Custbtn from "../../Components/Custbtn";
 import Signcustom from "../../Components/Signcustom";
 import Strings from "../../Constants/Strings";
+import { datasend } from "../../redux/action/addStack";
 export const Location = ({ navigation }) => {
   const locationsend = [
     {
-      id: 1,
+      id: "1",
       address: "Sector 55, Chandigarh",
       imagepath: Imagepath.icgreytick,
     },
     {
-      id: 2,
+      id: "2",
       address: "Sector 55, Chandigarh",
       imagepath: Imagepath.icgreytick,
     },
     {
-      id: 3,
+      id: "3",
       address: "Sector 55, Chandigarh",
       imagepath: Imagepath.icgreytick,
     },
     {
-      id: 4,
+      id: "4",
       address: "Sector 55, Chandigarh",
       imagepath: Imagepath.icgreytick,
     },
     {
-      id: 5,
+      id: "5",
       address: "Sector 55, Chandigarh",
       imagepath: Imagepath.icgreytick,
     },
@@ -72,7 +73,9 @@ export const Location = ({ navigation }) => {
           <Text style={style.suggest}>{Strings.Suggestions}</Text>
           <FlatList
             data={locState.locationsend}
+            keyExtractor={item=>item.id.toString()}
             renderItem={({ item }) => (
+          
               <TouchableOpacity
                 style={style.sectorcheck}
                 onPress={() => onPressvalue(item.id)}
@@ -86,9 +89,9 @@ export const Location = ({ navigation }) => {
       </View>
       <View style={style.locationbottom}>
         <Custbtn
-          onPress={() => {
-            navigation.navigate("");
-          }}
+          onPress={() => 
+          datasend(true)
+          }
           socialimg
           style={style.imgoogle}
           title={Strings.SELECT_PROCEED}

@@ -17,16 +17,16 @@ const style = StyleSheet.create({
   input: {
     borderRadius: moderateScale(8),
     height: moderateVerticalScale(20),
-    fontSize: moderateScale(15),
+    fontSize: 15,
     flexDirection: "row",
     gap: moderateScale(20),
-    color:ColorStyle.WHITE,
+    color: ColorStyle.WHITE,
     alignItems: "center",
     marginBottom: moderateScale(32),
   },
   edittext: {
     flex: 1,
-    color:ColorStyle.INPUT_TEXT,
+    color: ColorStyle.INPUT_TEXT,
     fontSize: 15,
   },
 });

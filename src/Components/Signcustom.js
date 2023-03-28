@@ -43,7 +43,6 @@ const style = StyleSheet.create({
     backgroundColor:ColorStyle.LIGHT_BACKGROUND_GREY,
     borderRadius: moderateScale(8),
     opacity: 0.8,
-    fontSize: moderateScale(14),
     flexDirection: "row",
     justifyContent: "space-between",
     color:ColorStyle.WHITE,

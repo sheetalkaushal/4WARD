@@ -6,19 +6,19 @@ import {
 import ColorStyle from "../StyleColor/ColorStyle";
 export const style = StyleSheet.create({
   container: {
-    backgroundColor:ColorStyle.DARK_GREY,
+    backgroundColor: ColorStyle.DARK_GREY,
     flex: 1,
     paddingLeft: moderateScale(24),
   },
   notifiy: {
-    color:ColorStyle.WHITE,
+    color: ColorStyle.WHITE,
     fontSize: moderateScale(16),
     fontWeight: "600",
     marginTop: moderateScale(56),
     marginBottom: moderateScale(24),
   },
   txtcontent: {
-    borderBottomColor:ColorStyle.INPUT_TEXT,
+    borderBottomColor: ColorStyle.INPUT_TEXT,
     borderBottomWidth: 1,
     width: moderateScale(398),
     paddingBottom: moderateScale(17),
@@ -30,12 +30,12 @@ export const style = StyleSheet.create({
     backgroundColor: "red",
   },
   username: {
-    color:ColorStyle.RED_BTN,
+    color: ColorStyle.RED_BTN,
     fontSize: 16,
     fontWeight: "500",
   },
   datatext: {
-    color:ColorStyle.WHITE,
+    color: ColorStyle.WHITE,
     fontSize: 16,
     fontWeight: "500",
   },
@@ -48,7 +48,7 @@ export const style = StyleSheet.create({
   },
   txttime: {
     opacity: 0.4,
-    color:ColorStyle.WHITE,
+    color: ColorStyle.WHITE,
     fontSize: 12,
     fontWeight: 500,
   },

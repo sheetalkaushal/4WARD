@@ -1,12 +1,9 @@
 import { StyleSheet } from "react-native";
-import {
-  moderateScale,
-  moderateVerticalScale,
-} from "react-native-size-matters";
+import { moderateScale } from "react-native-size-matters";
 import ColorStyle from "../StyleColor/ColorStyle";
 export const style = StyleSheet.create({
   container: {
-    backgroundColor:ColorStyle.DARK_GREY,
+    backgroundColor: ColorStyle.DARK_GREY,
     flex: 1,
     paddingHorizontal: moderateScale(24),
   },
@@ -18,8 +15,8 @@ export const style = StyleSheet.create({
     marginBottom: moderateScale(42),
   },
   info: {
-    color:ColorStyle.WHITE,
-    fontSize: moderateScale(16),
+    color: ColorStyle.WHITE,
+    fontSize: 16,
     fontWeight: "600",
   },
   setpasstop: {

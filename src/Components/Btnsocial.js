@@ -14,16 +14,15 @@ import {
 import ColorStyle from "../Screens/StyleColor/ColorStyle";
 export default ({ title, socialimg }) => {
   return (
-      <TouchableOpacity style={style.btnsocial}>
-        <Image source={socialimg}></Image>
-        <Text style={style.textsocial}>{title}</Text>
-      </TouchableOpacity>
-
+    <TouchableOpacity style={style.btnsocial}>
+      <Image source={socialimg}></Image>
+      <Text style={style.textsocial}>{title}</Text>
+    </TouchableOpacity>
   );
 };
 const style = StyleSheet.create({
   btnsocial: {
-    backgroundColor:ColorStyle.WHITE ,
+    backgroundColor: ColorStyle.WHITE,
     borderRadius: 8,
     height: moderateVerticalScale(48),
     alignItems: "center",
@@ -35,9 +34,8 @@ const style = StyleSheet.create({
     fontSize: moderateVerticalScale(14),
     fontWeight: "bold",
     letterSpacing: moderateScale(0.88),
-    lineHeight: 17,
     textAlign: "center",
-    color:ColorStyle.BLACK_TXT,
+    color: ColorStyle.BLACK_TXT,
     flex: 1,
   },
   socialimg: {

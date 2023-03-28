@@ -43,22 +43,19 @@ export const style = StyleSheet.create({
     width: moderateVerticalScale(248),
     fontSize: moderateScale(14),
     color: ColorStyle.INPUT_TEXT,
-    letterSpacing: 0,
   },
   or: {
     height: moderateVerticalScale(32),
     color: ColorStyle.WHITE,
-
     fontSize: 16,
     marginTop: moderateScale(16),
     letterSpacing: 0,
-    lineHeight: 20,
     textAlign: "center",
   },
   suggest: {
     height: moderateVerticalScale(24),
     color: ColorStyle.WHITE,
-    fonStize: moderateScale(15),
+    fontSize: moderateScale(15),
     fontWeight: "600",
     letterSpacing: 0,
     marginVertical: moderateScale(16),
@@ -77,7 +74,6 @@ export const style = StyleSheet.create({
   },
   enterlocation: {
     color: ColorStyle.INPUT_TEXT,
-
     fontSize: moderateScale(14),
     opacity: 0.5,
   },

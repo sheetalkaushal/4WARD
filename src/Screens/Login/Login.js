@@ -5,18 +5,21 @@ import Imagepath from "../../Constants/Imagepath";
 import Signcustom from "../../Components/Signcustom.js";
 import Custbtn from "../../Components/Custbtn.js";
 import Strings from "../../Constants/Strings";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { AsyncSendData } from "../../utilis/asyndata";
 export const Login = ({ navigation }) => {
   const [mobile, SetMobile] = useState("");
   const [password, SetPassword] = useState("");
   const [enterpass, SetEnterPass] = useState(true);
   const [Hide, SetHide] = useState("Show");
-  function gotolocation() {
+   async function gotolocation() {
     if (!mobile.trim()) {
       alert("enter mobile number");
     } else if (!password.trim()) {
       alert("enter password");
     } else {
-      navigation.navigate("Location");
+      AsyncSendData("Suggestions",{"Mobile":mobile,"Password":password})
+      navigation.navigate(Strings.Set_location)
     }
   }
   function Hidepassword() {

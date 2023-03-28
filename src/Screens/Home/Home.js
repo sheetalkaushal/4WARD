@@ -1,13 +1,29 @@
 import { View, Text, ScrollView, Image, FlatList } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { style } from "./Homestyle";
 import Imagepath from "../../Constants/Imagepath";
 import { TouchableOpacity } from "react-native";
 import open from "react-native-open-maps";
 import Strings from "../../Constants/Strings";
+import { getdata, postData } from "../../redux/action/actionApi";
+import {LOGIN_POST } from "../../config/urls";
+import { GetAsync } from "../../utilis/asyndata";
 export const Home = ({ navigation }) => {
+  useEffect(() => {
+    const  postingdata={
+      username: "honey",
+      password:"12345678",
+      device_type: "android",
+      device_token: '123456'
+    }
+    // getdata(GET_STATIC_DATA);
+postData(LOGIN_POST,postingdata,{})
+ 
+  },[]);
+
   carddata = [
     {
+      id:"1",
       personimg: Imagepath.icGoogle,
       personname: "Ressell gordon",
       personaddres: "Sector 28D, Chandigarh",
@@ -19,6 +35,7 @@ export const Home = ({ navigation }) => {
       likes: "44,686",
     },
     {
+      id:"2",
       personimg: Imagepath.icactiveheart,
       personname: "Ressell gordon",
       personaddres: "Sector 28D, Chandigarh",
@@ -30,6 +47,7 @@ export const Home = ({ navigation }) => {
       likes: "44,686",
     },
     {
+      id:"3",
       personimg: Imagepath.icapple,
       personname: "Ressell gordon",
       personaddres: "Sector 28D, Chandigarh",
@@ -53,47 +71,45 @@ export const Home = ({ navigation }) => {
           <Image style={style.imgloc} source={Imagepath.icloc} />
         </TouchableOpacity>
       </View>
-      <ScrollView>
-        <FlatList
-          data={carddata}
-          renderItem={({ item }) => (
-            <>
-              <View style={style.card}>
-                <View style={style.head}>
-                  <Image style={style.profile} source={item.personimg} />
-                  <View style={style.russellheader}>
-                    <Text style={style.gordon}>{item.personname} </Text>
-                    <Text style={style.headersector}>{item.personaddres}</Text>
-                  </View>
-                  <Image style={style.dots} source={Imagepath.icdots} />
+      <FlatList
+        data={carddata}
+        keyExtractor={item=>item.id.toString()}
+        renderItem={({ item }) => (
+          <>
+            <View style={style.card}>
+              <View style={style.head}>
+                <Image style={style.profile} source={item.personimg} />
+                <View style={style.russellheader}>
+                  <Text style={style.gordon}>{item.personname} </Text>
+                  <Text style={style.headersector}>{item.personaddres}</Text>
                 </View>
-                <View>
-                  <TouchableOpacity
-                    onPress={() => navigation.navigate("PostDetail", { item })}
-                  >
-                    <Image style={style.home} source={item.imagehome} />
-                  </TouchableOpacity>
-                </View>
-                <View style={style.content}>
-                  <Text style={style.loremcontent}>{item.description}</Text>
-                  <Text style={style.ago}>{item.timing}</Text>
-                </View>
-                <View style={style.cardsbottom}>
-                  <Text style={style.comments}>
-                    {Strings.Comment} {item.comments}
-                  </Text>
-                  <Text style={style.likes}>
-                    {Strings.Likes} {item.likes}
-                  </Text>
-                  <Image style={style.share} source={Imagepath.icdirection} />
-                </View>
+                <Image style={style.dots} source={Imagepath.icdots} />
               </View>
-            </>
-          )}
-        />
-      </ScrollView>
-      <View style={{height:80}}></View>
+              <View>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("PostDetail", { item })}
+                >
+                  <Image style={style.home} source={item.imagehome} />
+                </TouchableOpacity>
+              </View>
+              <View style={style.content}>
+                <Text style={style.loremcontent}>{item.description}</Text>
+                <Text style={style.ago}>{item.timing}</Text>
+              </View>
+              <View style={style.cardsbottom}>
+                <Text style={style.comments}>
+                  {Strings.Comment} {item.comments}
+                </Text>
+                <Text style={style.likes}>
+                  {Strings.Likes} {item.likes}
+                </Text>
+                <Image style={style.share} source={Imagepath.icdirection} />
+              </View>
+            </View>
+          </>
+        )}
+      />
+      <View style={{ height: 80 }}></View>
     </View>
-  
   );
 };

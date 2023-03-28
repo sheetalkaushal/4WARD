@@ -16,7 +16,7 @@ export default ({ title, onPress }) => {
 };
 const style = StyleSheet.create({
   btntouch: {
-    backgroundColor:ColorStyle.RED_BTN,
+    backgroundColor: ColorStyle.RED_BTN,
     borderRadius: 8,
     height: moderateVerticalScale(48),
     alignItems: "center",
@@ -27,6 +27,6 @@ const style = StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: moderateScale(0.88),
     textAlign: "center",
-    color:ColorStyle.WHITE,
+    color: ColorStyle.WHITE,
   },
 });

@@ -59,5 +59,6 @@ export default {
   SAVE:"SAVE",
   Change_Password:"Change Password",
   Signout:"Signout",
+  Set_location:"Location"
 
 };

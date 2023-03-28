@@ -11,7 +11,7 @@ export const Onboarding = ({ navigation }) => {
         showsHorizontalScrollIndicator={false}
         horizontal
         style={style.container}
-        scrollEnabled={false}
+        scrollEnabled={true}
       >
         <View style={style.cards}>
           <Image source={Imagepath.icOnward} style={style.imgward} />

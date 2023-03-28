@@ -11,7 +11,6 @@ export const EditProfile = ({ navigation }) => {
   const [Last, SetLast] = useState("");
   const [Email, SetEmail] = useState("");
   const [Mobile, SetMobile] = useState("");
-
   function gotosetpass() {
     if (!first.trim()) {
       alert("Enter your first name");

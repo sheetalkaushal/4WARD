@@ -33,6 +33,5 @@ export const style = StyleSheet.create({
     fontSize: 15,
     opacity: 0.9,
     letterSpacing: 0,
-    lineWeight: 32,
   },
 });

@@ -8,6 +8,7 @@ import Strings from "../../Constants/Strings";
 export const Notification = () => {
   dataNotify = [
     {
+      id:"1",
       userimg: Imagepath.icuser,
       username: "Russell Gordon",
       datatext: " added a new post.",
@@ -15,6 +16,7 @@ export const Notification = () => {
     },
 
     {
+      id:"2",
       userimg: Imagepath.icGoogle,
       username: "Sara",
       datatext: " added a new post.",
@@ -22,6 +24,7 @@ export const Notification = () => {
     },
 
     {
+      id:"3",
       userimg: Imagepath.icfireimage,
       username: "Raphl",
       datatext: " added a new post.",
@@ -29,6 +32,7 @@ export const Notification = () => {
     },
 
     {
+      id:"4",
       userimg: Imagepath.icFlag,
       username: "Raphl",
       datatext: " added a new post.",
@@ -40,6 +44,7 @@ export const Notification = () => {
       <Text style={style.notifiy}>{Strings.Notification}</Text>
       <FlatList
         data={dataNotify}
+        keyExtractor={item=>item.id.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity style={style.notificationpop}>
             <Image style={style.user} source={item.userimg}></Image>

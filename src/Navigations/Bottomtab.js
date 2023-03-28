@@ -2,12 +2,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Image } from "react-native";
 import Imagepath from "../Constants/Imagepath";
-import { ChangeProfile } from "../Screens/ChangeProfile/ChangeProfile";
-import { EditProfile } from "../Screens/EditProfile/EditProfile";
 import { Home } from "../Screens/Home/Home";
 import { Notification } from "../Screens/Notification/Notification";
 import { PostCamera } from "../Screens/PostCamera/PostCamera";
-import PostDetail from "../Screens/PostDetail/PostDetail";
 import { Profile } from "../Screens/Profile/Profile";
 import { Search } from "../Screens/Search/Search";
 import ColorStyle from "../Screens/StyleColor/ColorStyle";
@@ -15,11 +12,15 @@ const Tab = createBottomTabNavigator();
 export default function Bottomtab() {
   return (
     <Tab.Navigator
-      screenOptions={{ headerShown: false, tabBarShowLabel: false ,tabBarHideOnKeyboard: true,}}
+      screenOptions={{
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarHideOnKeyboard: true,
+      }}
     >
       <Tab.Screen
-        name="HomeStack"
-        component={HomeStack}
+        name="Home"
+        component={Home}
         options={{
           tabBarIcon: ({ focused }) => {
             return focused ? (
@@ -29,10 +30,10 @@ export default function Bottomtab() {
             );
           },
           tabBarStyle: {
-            backgroundColor:ColorStyle.LIGHT_BACKGROUND_GREY,
+            backgroundColor: ColorStyle.LIGHT_BACKGROUND_GREY,
             height: 80,
             borderRadius: 8,
-            borderTopWidth:0,
+            borderTopWidth: 0,
             position: "absolute",
           },
         }}
@@ -49,11 +50,11 @@ export default function Bottomtab() {
             );
           },
           tabBarStyle: {
-            backgroundColor:ColorStyle.LIGHT_BACKGROUND_GREY,
+            backgroundColor: ColorStyle.LIGHT_BACKGROUND_GREY,
             height: 80,
             borderRadius: 8,
             position: "absolute",
-            borderTopWidth:0,
+            borderTopWidth: 0,
           },
         }}
       />
@@ -69,11 +70,11 @@ export default function Bottomtab() {
             );
           },
           tabBarStyle: {
-            backgroundColor:ColorStyle.LIGHT_BACKGROUND_GREY,
+            backgroundColor: ColorStyle.LIGHT_BACKGROUND_GREY,
             height: 80,
             borderRadius: 8,
             position: "absolute",
-            borderTopWidth:0,
+            borderTopWidth: 0,
             display: "none",
           },
         }}
@@ -94,13 +95,13 @@ export default function Bottomtab() {
             height: 80,
             borderRadius: 8,
             position: "absolute",
-            borderTopWidth:0,
+            borderTopWidth: 0,
           },
         }}
       />
       <Tab.Screen
-        name="ProfileStack"
-        component={ProfileStack}
+        name="Profile"
+        component={Profile}
         options={{
           tabBarIcon: ({ focused }) => {
             return focused ? (
@@ -110,46 +111,14 @@ export default function Bottomtab() {
             );
           },
           tabBarStyle: {
-            backgroundColor:ColorStyle.LIGHT_BACKGROUND_GREY,
+            backgroundColor: ColorStyle.LIGHT_BACKGROUND_GREY,
             height: 80,
             borderRadius: 8,
             position: "absolute",
-            borderTopWidth:0,
+            borderTopWidth: 0,
           },
         }}
       />
     </Tab.Navigator>
   );
 }
-//Stacks for bottom tab only on Home tabs
-const Stack = createNativeStackNavigator();
-
-export const HomeStack = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{ headerShown: false, tabBarShowLabel: false }}
-    >
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="PostDetail" component={PostDetail} />
-    </Stack.Navigator>
-  );
-};
-export const ProfileStack = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{ headerShown: false, tabBarShowLabel: false }}
-    >
-      <Stack.Screen name="Profile" component={Profile} />
-      <Stack.Screen name="EditProfile" component={EditProfile} />
-      <Stack.Screen name="ChangeProfile" component={ChangeProfile} />
-    </Stack.Navigator>
-  );
-};
-
-export const AddPostStack = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{ headerShown: false, tabBarShowLabel: false }}
-    ></Stack.Navigator>
-  );
-};

@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, Platform } from "react-native";
 import React from "react";
 import { style } from "./Intiallystyle";
 import Imagepath from "../../Constants/Imagepath";
@@ -17,22 +17,16 @@ export const Intially = ({ navigation }) => {
       <Custbtn
         onPress={() => navigation.navigate("Login")}
         title={Strings.LogIn_Phone_No}
-      />   
+      />
       <View>
         <Text style={style.or}>Or</Text>
       </View>
-      <Btnsocial
-        socialimg={Imagepath.icGoogle}
-        title={Strings.LogIn_Google}
-      />
+      <Btnsocial socialimg={Imagepath.icGoogle} title={Strings.LogIn_Google} />
       <Btnsocial
         socialimg={Imagepath.icFacebook}
         title={Strings.LogIn_Facebook}
       />
-      <Btnsocial
-        socialimg={Imagepath.icapple}
-        title={Strings.LogIn_Apple}
-      />
+      {Platform.OS==='ios' ?<Btnsocial socialimg={Imagepath.icapple} title={Strings.LogIn_Apple} />:null}
       <TouchableOpacity
         onPress={() => {
           navigation.navigate("Signup");

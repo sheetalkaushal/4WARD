@@ -10,8 +10,8 @@ export const ChangeProfile = ({ navigation }) => {
   const [confirmpass, SetConfirmPass] = useState("");
   const [enterpass, SetEnterPass] = useState(true);
   const [Showconfirmpass, SetShowConfirmPass] = useState(true);
-  const [Hide, SetHide] = useState('Show');
-  const [ConfirmHide, SetConfirmHide] = useState('Show');
+  const [Hide, SetHide] = useState("Show");
+  const [ConfirmHide, SetConfirmHide] = useState("Show");
   function gotologin() {
     if (!pass.trim()) {
       alert("enter password");
@@ -26,24 +26,24 @@ export const ChangeProfile = ({ navigation }) => {
   function password() {
     if (enterpass == false) {
       SetEnterPass(true);
-      SetHide('hide')
+      SetHide("hide");
       return;
     }
     if (enterpass == true) {
       SetEnterPass(false);
-      SetHide('Show')
+      SetHide("Show");
       return;
     }
   }
   function Confirmpassword() {
     if (Showconfirmpass == false) {
       SetShowConfirmPass(true);
-      SetConfirmHide('hide')
+      SetConfirmHide("hide");
       return;
     }
     if (Showconfirmpass == true) {
       SetShowConfirmPass(false);
-      SetConfirmHide('Show')
+      SetConfirmHide("Show");
       return;
     }
   }
@@ -65,7 +65,7 @@ export const ChangeProfile = ({ navigation }) => {
             placeholder={Strings.Password}
             SHOW={Hide}
             hide={enterpass}
-            onChangeText={(val) =>SetPass(val)}
+            onChangeText={(val) => SetPass(val)}
             maxLength={8}
           />
         </View>
@@ -81,7 +81,7 @@ export const ChangeProfile = ({ navigation }) => {
         </View>
       </View>
       <View style={style.setpassbottom}>
-        <Custbtn onPress={gotologin} title={Strings.SAVE}/>
+        <Custbtn onPress={gotologin} title={Strings.SAVE} />
       </View>
     </View>
   );
