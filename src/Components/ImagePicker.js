@@ -26,7 +26,7 @@ export function ImagePickers() {
   };
   return (
     <View style={styles.container}>
-      {image && <Image source={{ uri: image }} style={styles.pickimg} />}
+      {<Image source={{ uri: image }} style={styles.pickimg} />}
       <TouchableOpacity style={styles.pickimg} onPress={pickImage}>
         <Image source={Imagepath.icPlus} />
       </TouchableOpacity>

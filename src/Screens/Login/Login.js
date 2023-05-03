@@ -12,14 +12,14 @@ export const Login = ({ navigation }) => {
   const [password, SetPassword] = useState("");
   const [enterpass, SetEnterPass] = useState(true);
   const [Hide, SetHide] = useState("Show");
-   async function gotolocation() {
+  async function gotolocation() {
     if (!mobile.trim()) {
       alert("enter mobile number");
     } else if (!password.trim()) {
       alert("enter password");
     } else {
-      AsyncSendData("Suggestions",{"Mobile":mobile,"Password":password})
-      navigation.navigate(Strings.Set_location)
+      AsyncSendData("Suggestions", { Mobile: mobile, Password: password });
+      navigation.navigate(Strings.Set_location);
     }
   }
   function Hidepassword() {

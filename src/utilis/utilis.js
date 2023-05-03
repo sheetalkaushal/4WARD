@@ -18,11 +18,11 @@ export const apiReq = (url, method, header, data) => {
   });
 };
 //get  api
-export const getapi = (url,header = {})=>{
-    return apiReq(url,"GET",header);
-    }
+export const getapi = (url, header = {}) => {
+  return apiReq(url, "GET", header);
+};
 
 // post api
-export const postapi = (url, data, header={})=>{
-    return apiReq(url, "POST", header, data);
-    }
+export const postapi = (url, data, header = {}) => {
+  return apiReq(url, "POST", header, data);
+};

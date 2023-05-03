@@ -5,7 +5,7 @@ import { EditCustom } from "../../Components/EditCustom";
 import Imagepath from "../../Constants/Imagepath";
 import Strings from "../../Constants/Strings";
 import { datasend } from "../../redux/action/addStack";
-import { AsyncClearData } from "../../utilis/asyndata";
+import { AsyncRemoveData } from "../../utilis/asyndata";
 export const Profile = ({ navigation }) => {
   return (
     <View style={style.container}>
@@ -27,7 +27,12 @@ export const Profile = ({ navigation }) => {
           titles={Strings.Change_Password}
           img={Imagepath.ickey}
         />
-        <EditCustom onPress={()=>AsyncClearData("Suggestions")} titles={Strings.Signout} img={Imagepath.iclogout} />
+        <EditCustom
+          onPress={() =>AsyncRemoveData("Suggestions")}
+      
+          titles={Strings.Signout}
+          img={Imagepath.iclogout}
+        />
       </View>
     </View>
   );

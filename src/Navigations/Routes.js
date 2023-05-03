@@ -5,7 +5,7 @@ import AuthStack from "./AuthStack";
 import HomeStack from "./HomeStack";
 const Stack = createNativeStackNavigator();
 export default function Routes() {
-  const checkStatus=useSelector((state)=> state.StatusLogin.checkStatus)
+  const checkStatus = useSelector((state) => state.status.checkStatus);
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ animation: "slide_from_right" }}>

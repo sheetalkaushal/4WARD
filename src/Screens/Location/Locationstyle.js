@@ -78,7 +78,7 @@ export const style = StyleSheet.create({
     opacity: 0.5,
   },
   locationtop: {
-    flex: 0.99,
+    flex: 0.9,
   },
   locationbottom: {
     flex: 0.1,

@@ -6,24 +6,27 @@ import { TouchableOpacity } from "react-native";
 import open from "react-native-open-maps";
 import Strings from "../../Constants/Strings";
 import { getdata, postData } from "../../redux/action/actionApi";
-import {LOGIN_POST } from "../../config/urls";
-import { GetAsync } from "../../utilis/asyndata";
+import { GET_STATIC_DATA, LOGIN_POST } from "../../config/urls";
 export const Home = ({ navigation }) => {
   useEffect(() => {
-    const  postingdata={
+    const postingdata = {
       username: "honey",
-      password:"12345678",
+      password: "12345678",
       device_type: "android",
-      device_token: '123456'
-    }
-    // getdata(GET_STATIC_DATA);
-postData(LOGIN_POST,postingdata,{})
- 
-  },[]);
+      device_token: "123456",
+    };
+    // getdata(GET_STATIC_DATA )
+    //    .then((res) => console.log(res))
+    //   .catch((er) => console.log(er));
+
+    postData(LOGIN_POST, postingdata, {})
+      .then((res) => console.log(res))
+      .catch((er) => console.log(er));
+  }, []);
 
   carddata = [
     {
-      id:"1",
+      id: "1",
       personimg: Imagepath.icGoogle,
       personname: "Ressell gordon",
       personaddres: "Sector 28D, Chandigarh",
@@ -35,7 +38,7 @@ postData(LOGIN_POST,postingdata,{})
       likes: "44,686",
     },
     {
-      id:"2",
+      id: "2",
       personimg: Imagepath.icactiveheart,
       personname: "Ressell gordon",
       personaddres: "Sector 28D, Chandigarh",
@@ -47,7 +50,7 @@ postData(LOGIN_POST,postingdata,{})
       likes: "44,686",
     },
     {
-      id:"3",
+      id: "3",
       personimg: Imagepath.icapple,
       personname: "Ressell gordon",
       personaddres: "Sector 28D, Chandigarh",
@@ -73,7 +76,7 @@ postData(LOGIN_POST,postingdata,{})
       </View>
       <FlatList
         data={carddata}
-        keyExtractor={item=>item.id.toString()}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <>
             <View style={style.card}>
@@ -87,7 +90,7 @@ postData(LOGIN_POST,postingdata,{})
               </View>
               <View>
                 <TouchableOpacity
-                  onPress={() => navigation.navigate("PostDetail", { item })}
+                  onPress={(item) => navigation.navigate("PostDetail", { item })}
                 >
                   <Image style={style.home} source={item.imagehome} />
                 </TouchableOpacity>

@@ -4,9 +4,11 @@ import Imagepath from "../../Constants/Imagepath";
 import { style } from "./Onboradstyle";
 import { ScrollView } from "react-native-gesture-handler";
 import Strings from "../../Constants/Strings";
+import WrapperContainer from "../../Components/WrapperContainer";
+import ColorStyle from "../StyleColor/ColorStyle";
 export const Onboarding = ({ navigation }) => {
   return (
-    <View style={style.container}>
+  <WrapperContainer wrapStyle={{backgroundColor: ColorStyle .DARK_GREY}} >
       <ScrollView
         showsHorizontalScrollIndicator={false}
         horizontal
@@ -32,6 +34,6 @@ export const Onboarding = ({ navigation }) => {
       >
         <Text style={style.getstart}>{Strings.Get_Started}</Text>
       </TouchableOpacity>
-    </View>
+      </WrapperContainer>
   );
 };

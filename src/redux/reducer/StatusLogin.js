@@ -9,11 +9,7 @@ const StatusLogin = createSlice({
     getapi: (state, action) => {
       state.checkapi = action.payload;
     },
-    // postDummy:(state,action)=>{
-    //     state.postapi=action.payload
-    //     console.log(postapi)
-    // }
   },
 });
-export const { getReducers, dummyReducers } = StatusLogin.actions;
+export const { getReducers, getapi } = StatusLogin.actions;
 export default StatusLogin.reducer;

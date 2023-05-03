@@ -6,7 +6,9 @@ import { style } from "./PostDetailstyle";
 import { TouchableOpacity } from "react-native";
 import open from "react-native-open-maps";
 export const PostDetail = ({ navigation, route }) => {
-  const item = route.params.item;
+  const item = route?.params?.item;
+  console.log(("itemmnss",item))
+  // console.log(item.imagehome)
   return (
     <ImageBackground style={style.container} source={Imagepath.ichomecar}>
       <View style={style.head}>
